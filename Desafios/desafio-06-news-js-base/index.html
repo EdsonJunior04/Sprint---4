@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ex 1 - News</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="news">
+            <h1 class="news__title" id="formTitle">Se inscreva para receber mais informações</h1>
+            <form action="" class="news__form">
+                <div class="news__form-group">
+                    <label for="newsInputEmail" class="news__label">
+                        Email
+                    </label>
+                    <input type="email" class="news__input" id="newsInputEmail" 
+                        placeholder="email@exemplo.com.br">
+                </div>
+                <div class="news__form-group">
+                    <button class="button news__button" id="news__button" disabled>Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        
+
+    let inputEmails = document.getElementById("newsInputEmail");
+
+    let btnEnviar = document.getElementById("news__button");
+
+    function examinarInput() {
+            if (inputEmails.value.length > 5) {
+                btnEnviar.disabled = false;
+                btnEnviar.style.backgroundColor = "#ECDDF3";
+                
+            }
+            else{
+                btnEnviar.disabled = true;
+                btnEnviar.style.backgroundColor = "red";
+            }
+        }
+    inputEmails.addEventListener('input', function () {
+        examinarInput();
+    });
+
+    btnEnviar.addEventListener('click', function (pagina) {
+        pagina.preventDefault();
+
+        let mensagem = (examinarInput = true);
+        console.log("Cadastro Concluido!")
+    })
+       
+    
+    
+    </script>
+
+</body>
+</html>
