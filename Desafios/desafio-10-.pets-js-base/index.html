@@ -58,24 +58,59 @@
             }];
 
             // 1.	Liste somente os animais cujo tipo seja igual a gato;
-            //
+            console.log('1 Liste somente os animais cujo tipo seja igual a gato.')
+
+            let petGato = pets.filter((pet) => {
+                return pet.tipoPet === "gato"
+            });
+
+            console.log(petGato)
 
             // 2.	Liste somente os animais cuja idade seja superior a 7;
-            //
+            console.log('2 Liste somente os animais cuja idade seja superior a 7.');
+
+            let maiorQue7 = pets.filter((superior7) => {
+                return superior7.idade > '7'
+            });
+
+            console.log(maiorQue7)
 
             // 3.	Some a idade de todos os pets;
-            //
+            console.log('3 Some a idade de todos os pets')
+
+            let idade;
+
+            let totalIdade = pets.map(p => idade = p.idade).reduce((total, item)=> total + item, 0)
+
+            console.log(totalIdade)
             
             // 4.	Traga somente os nomes dos pets;
-            //
+            console.log('4 Traga somente os nomes dos pets.');
 
+            let nomesPets = pets.map(p => p.nome)
+
+            console.log(nomesPets)
             // 5.	Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro;
-            console.log('-----------5-----------');
-            //
+            console.log('5 Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro.');
 
+            let novoPet = {
+                nome: "doguinho",
+                idade: 13,
+                tipoPet: "cachorro"
+            }
+
+            pets.push (novoPet)
+            console.log(pets)
             // 6. Mostre a quantidade de cachorros que possuem na lista
-            //
+            console.log('6 Mostre a quantidade de cachorros que possuem na lista.');
+            
+            let quantidadeDogs;
 
+            let todosDogs = pets.filter(p => p.tipoPet === "cachorro")
+
+            quantidadeDogs = todosDogs.length
+
+            console.log(quantidadeDogs)
     </script>
 
 </body>

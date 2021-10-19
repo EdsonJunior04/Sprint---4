@@ -56,7 +56,7 @@
         // 2.	Liste somente os personagem cuja data de Aparição seja superior a 1950;
         console.log('2 Liste somente os personagem cuja data de Aparição seja superior a 1950.')
 
-        let ano1950 = personagens.filter((superior1950)=> {
+        let ano1950 = personagens.filter((superior1950) => {
             return superior1950.dataAparicao >= '1950'
         });
         console.log(ano1950);
@@ -80,6 +80,8 @@
             dataAparicao: 1977,
             editora: "Marvel"
         }
+        personagens.push(adicionar)
+        console.log(personagens)
 
         // 6. Mostre a quantidade de personagens da Marvel que possuem na lista
         console.log('6 Mostre a quantidade de personagens da Marvel que possuem na lista.')

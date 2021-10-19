@@ -63,19 +63,58 @@
         }];
 
         // 1.	Lista somente os times cujas vitórias seja maior ou igual que 20
-        //
+        console.log('1	Lista somente os times cujas vitórias seja maior ou igual que 20.')
+
+        let maiorQue20 = times.filter((time)=> {
+            return time.vitorias >= '20'
+        });
+        console.log(maiorQue20)
 
         // 2.	Traga somente os nomes dos times;
-        //
+        console.log('2 Traga somente os nomes dos times.')
+
+        let nomes = times.map(p => p.nome)
+
+        console.log(nomes)
 
         // 3.	Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36;
-        //
+        console.log('3 Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36.')
+
+        let adicionar = {
+            nome: "Wolves",
+            vitorias: 12,
+            empates: 8,
+            derrotas: 10,
+            golsproprio: 38,
+            golscontra: 36
+        }
+
+        times.push(adicionar)
+        console.log(times)
 
         // 4. Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time
-        //
+        console.log('4 Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time.');
+
+        let quantidadePartidas = times.map((t) => {
+
+            return `Nome: ${t.nome}
+                    Quantidade de jogos: ${t.vitorias + t.derrotas + t.empates}
+                    Vitorias: ${t.vitorias}
+                    Empates: ${t.empates}
+                    Derrotas: ${t.derrotas}`
+        });
+
+        console.log(quantidadePartidas)
+
 
         // 5.	Informe a quantidade de jogos do campeonato;
-        //
+        console.log('5 Informe a quantidade de jogos do campeonato.')
+
+        let jogos;
+
+        let totalJogos = times.map(t => jogos = t.derrotas + t.vitorias + t.empates).reduce((total, item) => total + item, 0)
+
+        console.log(totalJogos)
     </script>
 
 </body>
